@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F930AC39B4341E9E97BDB93 /* Pods_OSOrders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBEA8D5CEE30D6A3F63080C6 /* Pods_OSOrders.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2B2FA9041B5BB13200616150 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2FA9031B5BB13200616150 /* ContactListViewController.swift */; };
 		2B5D02271B5B81FB005B854E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D02261B5B81FB005B854E /* AppDelegate.swift */; };
-		2B5D02291B5B81FB005B854E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D02281B5B81FB005B854E /* ViewController.swift */; };
 		2B5D022C1B5B81FB005B854E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B5D022A1B5B81FB005B854E /* Main.storyboard */; };
 		2B5D022E1B5B81FB005B854E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B5D022D1B5B81FB005B854E /* Images.xcassets */; };
 		2B5D02311B5B81FB005B854E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5D022F1B5B81FB005B854E /* LaunchScreen.xib */; };
@@ -27,10 +27,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B2FA9031B5BB13200616150 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		2B2FA9051B5BB1EE00616150 /* Project-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Project-Bridging-Header.h"; sourceTree = "<group>"; };
 		2B5D02211B5B81FB005B854E /* OSOrders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSOrders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5D02251B5B81FB005B854E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B5D02261B5B81FB005B854E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B5D02281B5B81FB005B854E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B5D022B1B5B81FB005B854E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B5D022D1B5B81FB005B854E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2B5D02301B5B81FB005B854E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,10 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				2B5D02261B5B81FB005B854E /* AppDelegate.swift */,
-				2B5D02281B5B81FB005B854E /* ViewController.swift */,
-				2B5D022A1B5B81FB005B854E /* Main.storyboard */,
+				2B2FA9031B5BB13200616150 /* ContactListViewController.swift */,
 				2B5D022D1B5B81FB005B854E /* Images.xcassets */,
 				2B5D022F1B5B81FB005B854E /* LaunchScreen.xib */,
+				2B5D022A1B5B81FB005B854E /* Main.storyboard */,
 				2B5D02241B5B81FB005B854E /* Supporting Files */,
 			);
 			path = OSOrders;
@@ -98,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				2B5D02251B5B81FB005B854E /* Info.plist */,
+				2B2FA9051B5BB1EE00616150 /* Project-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -287,8 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B5D02291B5B81FB005B854E /* ViewController.swift in Sources */,
 				2B5D02271B5B81FB005B854E /* AppDelegate.swift in Sources */,
+				2B2FA9041B5BB13200616150 /* ContactListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
