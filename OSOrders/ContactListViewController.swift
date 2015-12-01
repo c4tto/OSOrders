@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class ContactListViewController: UITableViewController {
 
@@ -28,9 +29,12 @@ class ContactListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("contactCell", forIndexPath: indexPath)
-        cell.textLabel?.text = "Name"
-        cell.detailTextLabel?.text = "134 567 755"
+        let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactCell
+        
+        cell.nameLabel?.text = "Name"
+        cell.phoneLabel?.text = "134 567 755"
+        cell.photoImageView?.setImageWithURL(NSURL(string: "http://domaingang.com/wp-content/uploads/2012/02/example.png")!, placeholderImage: UIImage(named: "contact-default"))
+        
         return cell
     }
     

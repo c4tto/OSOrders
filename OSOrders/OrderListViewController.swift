@@ -23,15 +23,20 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 5
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCellWithIdentifier("OrderCell", forIndexPath: indexPath) as! OrderCell
+        
+        cell.nameLabel.text = "MacBook Air"
+        cell.countLabel.text = "1x"
+        
+        return cell;
     }
     
     // MARK: - Actions

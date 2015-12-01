@@ -14,10 +14,7 @@ class AddContactViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    // MARK: - Table view delegate
-    
-    
-    // MARK: - Acions
+    // MARK: - Actions
     
     @IBAction func addContact() {
         // TODO: add contact

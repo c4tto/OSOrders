@@ -13,6 +13,8 @@
 		2B5D022C1B5B81FB005B854E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B5D022A1B5B81FB005B854E /* Main.storyboard */; };
 		2B5D022E1B5B81FB005B854E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B5D022D1B5B81FB005B854E /* Images.xcassets */; };
 		2B5D02311B5B81FB005B854E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5D022F1B5B81FB005B854E /* LaunchScreen.xib */; };
+		2B75188C1C0E4D7D007F7A55 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75188B1C0E4D7D007F7A55 /* ContactCell.swift */; };
+		2B75188E1C0E4D9E007F7A55 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B75188D1C0E4D9E007F7A55 /* OrderCell.swift */; };
 		2B9C26C61C0E3757003E8B62 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C26C51C0E3757003E8B62 /* OrderListViewController.swift */; };
 		2B9C26C81C0E398F003E8B62 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C26C71C0E398F003E8B62 /* AddContactViewController.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,8 @@
 		2B5D022B1B5B81FB005B854E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B5D022D1B5B81FB005B854E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2B5D02301B5B81FB005B854E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2B75188B1C0E4D7D007F7A55 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		2B75188D1C0E4D9E007F7A55 /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		2B9C26C51C0E3757003E8B62 /* OrderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		2B9C26C71C0E398F003E8B62 /* AddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		3E7CEFAC9AAB18C09D885C1E /* Pods-OSOrders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSOrders.release.xcconfig"; path = "Pods/Target Support Files/Pods-OSOrders/Pods-OSOrders.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 		2B9C26BF1C0E336B003E8B62 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2B75188B1C0E4D7D007F7A55 /* ContactCell.swift */,
+				2B75188D1C0E4D9E007F7A55 /* OrderCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -276,9 +282,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B75188C1C0E4D7D007F7A55 /* ContactCell.swift in Sources */,
 				2B5D02271B5B81FB005B854E /* AppDelegate.swift in Sources */,
 				2B9C26C81C0E398F003E8B62 /* AddContactViewController.swift in Sources */,
 				2B9C26C61C0E3757003E8B62 /* OrderListViewController.swift in Sources */,
+				2B75188E1C0E4D9E007F7A55 /* OrderCell.swift in Sources */,
 				2B2FA9041B5BB13200616150 /* ContactListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
