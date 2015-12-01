@@ -7,24 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F930AC39B4341E9E97BDB93 /* Pods_OSOrders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBEA8D5CEE30D6A3F63080C6 /* Pods_OSOrders.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0F930AC39B4341E9E97BDB93 /* Pods_OSOrders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBEA8D5CEE30D6A3F63080C6 /* Pods_OSOrders.framework */; };
 		2B2FA9041B5BB13200616150 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2FA9031B5BB13200616150 /* ContactListViewController.swift */; };
 		2B5D02271B5B81FB005B854E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D02261B5B81FB005B854E /* AppDelegate.swift */; };
 		2B5D022C1B5B81FB005B854E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B5D022A1B5B81FB005B854E /* Main.storyboard */; };
 		2B5D022E1B5B81FB005B854E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B5D022D1B5B81FB005B854E /* Images.xcassets */; };
 		2B5D02311B5B81FB005B854E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5D022F1B5B81FB005B854E /* LaunchScreen.xib */; };
-		2B5D023D1B5B81FB005B854E /* OSOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D023C1B5B81FB005B854E /* OSOrdersTests.swift */; };
+		2B9C26C61C0E3757003E8B62 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C26C51C0E3757003E8B62 /* OrderListViewController.swift */; };
+		2B9C26C81C0E398F003E8B62 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C26C71C0E398F003E8B62 /* AddContactViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2B5D02371B5B81FB005B854E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2B5D02191B5B81FB005B854E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2B5D02201B5B81FB005B854E;
-			remoteInfo = OSOrders;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2B2FA9031B5BB13200616150 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
@@ -35,9 +26,8 @@
 		2B5D022B1B5B81FB005B854E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B5D022D1B5B81FB005B854E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2B5D02301B5B81FB005B854E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2B5D02361B5B81FB005B854E /* OSOrdersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSOrdersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B5D023B1B5B81FB005B854E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B5D023C1B5B81FB005B854E /* OSOrdersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSOrdersTests.swift; sourceTree = "<group>"; };
+		2B9C26C51C0E3757003E8B62 /* OrderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		2B9C26C71C0E398F003E8B62 /* AddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		3E7CEFAC9AAB18C09D885C1E /* Pods-OSOrders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSOrders.release.xcconfig"; path = "Pods/Target Support Files/Pods-OSOrders/Pods-OSOrders.release.xcconfig"; sourceTree = "<group>"; };
 		BBEA8D5CEE30D6A3F63080C6 /* Pods_OSOrders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSOrders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DEC81ADDE408A1AFEB36F8 /* Pods-OSOrders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSOrders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSOrders/Pods-OSOrders.debug.xcconfig"; sourceTree = "<group>"; };
@@ -52,13 +42,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B5D02331B5B81FB005B854E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -66,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				2B5D02231B5B81FB005B854E /* OSOrders */,
-				2B5D02391B5B81FB005B854E /* OSOrdersTests */,
 				2B5D02221B5B81FB005B854E /* Products */,
 				A975606F0B6A727FB32E399A /* Pods */,
 				DD27F915F2B04A1A7880942C /* Frameworks */,
@@ -77,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				2B5D02211B5B81FB005B854E /* OSOrders.app */,
-				2B5D02361B5B81FB005B854E /* OSOrdersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,10 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				2B5D02261B5B81FB005B854E /* AppDelegate.swift */,
-				2B2FA9031B5BB13200616150 /* ContactListViewController.swift */,
-				2B5D022D1B5B81FB005B854E /* Images.xcassets */,
-				2B5D022F1B5B81FB005B854E /* LaunchScreen.xib */,
-				2B5D022A1B5B81FB005B854E /* Main.storyboard */,
+				2B9C26BD1C0E334A003E8B62 /* Controllers */,
+				2B9C26C11C0E33AB003E8B62 /* Model */,
+				2B9C26BE1C0E3363003E8B62 /* Views */,
+				2B9C26C21C0E33C9003E8B62 /* Utilities */,
+				2B9C26C01C0E3381003E8B62 /* GUI */,
 				2B5D02241B5B81FB005B854E /* Supporting Files */,
 			);
 			path = OSOrders;
@@ -104,21 +86,53 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2B5D02391B5B81FB005B854E /* OSOrdersTests */ = {
+		2B9C26BD1C0E334A003E8B62 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2B5D023C1B5B81FB005B854E /* OSOrdersTests.swift */,
-				2B5D023A1B5B81FB005B854E /* Supporting Files */,
+				2B9C26C71C0E398F003E8B62 /* AddContactViewController.swift */,
+				2B2FA9031B5BB13200616150 /* ContactListViewController.swift */,
+				2B9C26C51C0E3757003E8B62 /* OrderListViewController.swift */,
 			);
-			path = OSOrdersTests;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
-		2B5D023A1B5B81FB005B854E /* Supporting Files */ = {
+		2B9C26BE1C0E3363003E8B62 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2B5D023B1B5B81FB005B854E /* Info.plist */,
+				2B9C26BF1C0E336B003E8B62 /* Cells */,
 			);
-			name = "Supporting Files";
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2B9C26BF1C0E336B003E8B62 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		2B9C26C01C0E3381003E8B62 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				2B5D022D1B5B81FB005B854E /* Images.xcassets */,
+				2B5D022F1B5B81FB005B854E /* LaunchScreen.xib */,
+				2B5D022A1B5B81FB005B854E /* Main.storyboard */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		2B9C26C11C0E33AB003E8B62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2B9C26C21C0E33C9003E8B62 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		A975606F0B6A727FB32E399A /* Pods */ = {
@@ -161,39 +175,20 @@
 			productReference = 2B5D02211B5B81FB005B854E /* OSOrders.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2B5D02351B5B81FB005B854E /* OSOrdersTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2B5D02431B5B81FB005B854E /* Build configuration list for PBXNativeTarget "OSOrdersTests" */;
-			buildPhases = (
-				2B5D02321B5B81FB005B854E /* Sources */,
-				2B5D02331B5B81FB005B854E /* Frameworks */,
-				2B5D02341B5B81FB005B854E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2B5D02381B5B81FB005B854E /* PBXTargetDependency */,
-			);
-			name = OSOrdersTests;
-			productName = OSOrdersTests;
-			productReference = 2B5D02361B5B81FB005B854E /* OSOrdersTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2B5D02191B5B81FB005B854E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Ondrej Stocek";
 				TargetAttributes = {
 					2B5D02201B5B81FB005B854E = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					2B5D02351B5B81FB005B854E = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 2B5D02201B5B81FB005B854E;
+						DevelopmentTeam = G478E2WAF6;
 					};
 				};
 			};
@@ -211,7 +206,6 @@
 			projectRoot = "";
 			targets = (
 				2B5D02201B5B81FB005B854E /* OSOrders */,
-				2B5D02351B5B81FB005B854E /* OSOrdersTests */,
 			);
 		};
 /* End PBXProject section */
@@ -224,13 +218,6 @@
 				2B5D022C1B5B81FB005B854E /* Main.storyboard in Resources */,
 				2B5D02311B5B81FB005B854E /* LaunchScreen.xib in Resources */,
 				2B5D022E1B5B81FB005B854E /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2B5D02341B5B81FB005B854E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,27 +277,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B5D02271B5B81FB005B854E /* AppDelegate.swift in Sources */,
+				2B9C26C81C0E398F003E8B62 /* AddContactViewController.swift in Sources */,
+				2B9C26C61C0E3757003E8B62 /* OrderListViewController.swift in Sources */,
 				2B2FA9041B5BB13200616150 /* ContactListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B5D02321B5B81FB005B854E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2B5D023D1B5B81FB005B854E /* OSOrdersTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2B5D02381B5B81FB005B854E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2B5D02201B5B81FB005B854E /* OSOrders */;
-			targetProxy = 2B5D02371B5B81FB005B854E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2B5D022A1B5B81FB005B854E /* Main.storyboard */ = {
@@ -353,6 +326,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -418,8 +392,10 @@
 			baseConfigurationReference = E8DEC81ADDE408A1AFEB36F8 /* Pods-OSOrders.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = OSOrders/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "OS.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -429,43 +405,11 @@
 			baseConfigurationReference = 3E7CEFAC9AAB18C09D885C1E /* Pods-OSOrders.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = OSOrders/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "OS.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		2B5D02441B5B81FB005B854E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OSOrdersTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSOrders.app/OSOrders";
-			};
-			name = Debug;
-		};
-		2B5D02451B5B81FB005B854E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OSOrdersTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OSOrders.app/OSOrders";
 			};
 			name = Release;
 		};
@@ -486,15 +430,6 @@
 			buildConfigurations = (
 				2B5D02411B5B81FB005B854E /* Debug */,
 				2B5D02421B5B81FB005B854E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2B5D02431B5B81FB005B854E /* Build configuration list for PBXNativeTarget "OSOrdersTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2B5D02441B5B81FB005B854E /* Debug */,
-				2B5D02451B5B81FB005B854E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
