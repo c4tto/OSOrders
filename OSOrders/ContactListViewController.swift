@@ -8,6 +8,8 @@
 
 import UIKit
 import AFNetworking
+import PromiseKit
+import SwiftyJSON
 
 class ContactListViewController: UITableViewController {
 
@@ -16,6 +18,36 @@ class ContactListViewController: UITableViewController {
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
+        
+        let baseUrl = NSURL(string: "https://inloop-contacts.appspot.com/")
+        let manager = AFHTTPRequestOperationManager(baseURL: baseUrl)
+        manager.requestSerializer = AFJSONRequestSerializer()
+        manager.responseSerializer = AFJSONResponseSerializer()
+        
+        manager.GET("_ah/api/contactendpoint/v1/contact", parameters: nil)
+            .then { response -> Promise<AnyObject> in
+                print(response)
+                
+                let json = JSON(response)
+                let orderId = json["items", 0, "id"].stringValue
+                
+                return manager.GET("_ah/api/orderendpoint/v1/order/\(orderId)", parameters: nil)
+            }
+            .then{ response -> Promise<AnyObject> in
+                print(response)
+                
+                return manager.POST("_ah/api/contactendpoint/v1/contact", parameters: [
+                    "name": "John Doe",
+                    "phone": "123456789",
+                ])
+            }
+            .then { response in
+                print(response)
+            }
+            .error { error in
+                print(error)
+            }
+        
     }
 
     // MARK: - Table view data source
@@ -33,7 +65,7 @@ class ContactListViewController: UITableViewController {
         
         cell.nameLabel?.text = "Name"
         cell.phoneLabel?.text = "134 567 755"
-        cell.photoImageView?.setImageWithURL(NSURL(string: "http://domaingang.com/wp-content/uploads/2012/02/example.png")!, placeholderImage: UIImage(named: "contact-default"))
+        //cell.photoImageView?.setImageWithURL(NSURL(string: "http://domaingang.com/wp-content/uploads/2012/02/example.png")!, placeholderImage: UIImage(named: "contact-default"))
         
         return cell
     }
