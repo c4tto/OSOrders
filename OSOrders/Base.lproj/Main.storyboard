@@ -17,7 +17,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="109" id="Ppa-Pm-a7m" customClass="ContactCell" customModule="OSOrders" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="ContactCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="109" id="Ppa-Pm-a7m" customClass="ContactCell" customModule="OSOrders" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="600" height="109"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ppa-Pm-a7m" id="9Q8-tE-EGH">
@@ -131,7 +131,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" id="UZg-a2-Wyk" customClass="OrderCell" customModule="OSOrders" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="OrderCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" id="UZg-a2-Wyk" customClass="OrderCell" customModule="OSOrders" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UZg-a2-Wyk" id="9Sp-rz-8bD">
@@ -296,7 +296,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Contact" id="aEV-wP-NI4">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="bfu-2L-Jfd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bfu-2L-Jfd">
                             <connections>
                                 <action selector="dismiss" destination="FcF-Yj-Ifo" id="IPt-Gt-AFt"/>
                             </connections>

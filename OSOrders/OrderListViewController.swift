@@ -15,9 +15,6 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.refreshControl = UIRefreshControl()
-        //self.refreshControl?.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
     }
     
     // MARK: - Table view data source
@@ -37,11 +34,5 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         cell.countLabel.text = "1x"
         
         return cell;
-    }
-    
-    // MARK: - Actions
-    
-    func refresh() {
-        //self.refreshControl?.endRefreshing()
     }
 }
