@@ -11,6 +11,8 @@ import PromiseKit
 import SwiftyJSON
 
 class ContactListViewController: UITableViewController {
+    
+    var contacts: [Contact] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +22,11 @@ class ContactListViewController: UITableViewController {
         
         let communicator = ApiCommunicator()
         communicator.loadContacts()
-            .then { contactsJson -> Promise<JSON> in
-                let contactId = contactsJson["items", 0, "id"].stringValue
-                return communicator.loadOrdersForContact(contactId)
-            }
-            .then { ordersJson -> Promise<JSON> in
-                return communicator.addContact(name: "John Doe", phone: "123 456 789")
+            .then { [weak self] json -> Promise<[Contact]?> in
+                print(json)
+                self?.contacts = json["items"].arrayValue.map { Contact(json: $0) }
+                self?.tableView.reloadData()
+                return Promise(self?.contacts)
             }
             .error { error in
                 print(error)
@@ -39,16 +40,12 @@ class ContactListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.contacts.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactCell
-        
-        cell.nameLabel?.text = "Name"
-        cell.phoneLabel?.text = "134 567 755"
-        //cell.photoImageView?.setImageWithURL(NSURL(string: "http://domaingang.com/wp-content/uploads/2012/02/example.png")!, placeholderImage: UIImage(named: "contact-default"))
-        
+        cell.contact = self.contacts[indexPath.row]
         return cell
     }
     

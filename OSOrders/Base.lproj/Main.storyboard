@@ -63,7 +63,7 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="ghS-by-G5u" id="pNk-1I-HuY"/>
                                     <outlet property="phoneLabel" destination="TUV-tp-T2Z" id="SjG-x5-Nlg"/>
-                                    <outlet property="photoImageView" destination="vLg-ha-64m" id="iy5-Pe-pFA"/>
+                                    <outlet property="pictureImageView" destination="vLg-ha-64m" id="HTs-S4-QeE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -10,7 +10,7 @@ import UIKit
 
 class ContactCell: UITableViewCell {
     
-    @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet var pictureImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var phoneLabel: UILabel!
 
@@ -19,5 +19,16 @@ class ContactCell: UITableViewCell {
         
         nameLabel.text = nil
         phoneLabel.text = nil
+    }
+    
+    weak var contact: Contact? {
+        didSet {
+            nameLabel.text = contact?.name
+            phoneLabel.text = contact?.phone
+            pictureImageView.image = UIImage(named: "contact-default")
+            if let pictureUrl = contact?.pictureUrl {
+                pictureImageView.setImageWithURL(pictureUrl, placeholderImage: pictureImageView.image)
+            }
+        }
     }
 }
