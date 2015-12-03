@@ -1,5 +1,5 @@
 //
-//  Contact.swift
+//  Order.swift
 //  OSOrders
 //
 //  Created by Ondřej Štoček on 03.12.15.
@@ -9,12 +9,11 @@
 import RealmSwift
 import SwiftyJSON
 
-class Contact: Object {
-
+class Order: Object {
+    
     dynamic var id: String = ""
     dynamic var name: String?
-    dynamic var phone: String?
-    dynamic var pictureUrlString: String?
+    dynamic var count: Int = 0
     
     required init() {
         super.init()
@@ -25,11 +24,7 @@ class Contact: Object {
         
         id = json["id"].stringValue
         name = json["name"].string
-        phone = json["phone"].string
-        pictureUrlString = json["pictureUrl"].string
+        count = json["count"].intValue
     }
-    
-    var pictureUrl: NSURL? {
-        return pictureUrlString.flatMap { NSURL(string: $0) }
-    }
+
 }

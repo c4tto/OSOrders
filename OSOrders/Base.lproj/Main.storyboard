@@ -131,7 +131,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="OrderCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderCell" id="UZg-a2-Wyk" customClass="OrderCell" customModule="OSOrders" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="OrderCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderCell" id="UZg-a2-Wyk" customClass="OrderCell" customModule="OSOrders" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UZg-a2-Wyk" id="9Sp-rz-8bD">

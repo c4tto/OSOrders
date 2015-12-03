@@ -19,4 +19,12 @@ class OrderCell: UITableViewCell {
         nameLabel.text = nil
         countLabel.text = nil
     }
+    
+    weak var order: Order? {
+        didSet {
+            nameLabel.text = order?.name
+            countLabel.text = (order?.count).flatMap { "\($0)x" }
+        }
+    }
+
 }

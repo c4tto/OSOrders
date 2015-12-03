@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 import PromiseKit
 import SwiftyJSON
 
@@ -52,15 +53,16 @@ class ContactListViewController: UITableViewController {
     // MARK: - Table view delegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("OrderListViewController")
-        self.navigationController?.pushViewController(controller!, animated: true)
+        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("OrderListViewController") as! OrderListViewController
+        controller.contact = self.contacts[indexPath.row]
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 
     // MARK: - Actions
     
     @IBAction func showAddContact(sender: AnyObject) {
-        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("AddContactNavController");
-        self.presentViewController(controller!, animated: true, completion: nil)
+        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("AddContactNavController");
+        self.presentViewController(controller, animated: true, completion: nil)
     }
     
     func refresh() {

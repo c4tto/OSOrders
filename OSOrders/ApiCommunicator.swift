@@ -30,7 +30,7 @@ class ApiCommunicator: NSObject {
             }
     }
     
-    func loadOrdersForContact(contactId: String) -> Promise<JSON> {
+    func loadOrders(contactId contactId: String) -> Promise<JSON> {
         return self.requestOperationManager.GET(self.orderPath + contactId, parameters: nil)
             .then { response -> Promise<JSON> in
                 return Promise(JSON(response))

@@ -18,6 +18,7 @@
 		2B7518921C0F81D1007F7A55 /* AFNetworking+PromiseKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7518911C0F81D1007F7A55 /* AFNetworking+PromiseKit.swift */; };
 		2B7518941C102512007F7A55 /* ApiCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7518931C102512007F7A55 /* ApiCommunicator.swift */; };
 		2B7518971C10304E007F7A55 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7518961C10304E007F7A55 /* Contact.swift */; };
+		2B7518991C103E6C007F7A55 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7518981C103E6C007F7A55 /* Order.swift */; };
 		2B9C26C61C0E3757003E8B62 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C26C51C0E3757003E8B62 /* OrderListViewController.swift */; };
 		2B9C26C81C0E398F003E8B62 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C26C71C0E398F003E8B62 /* AddContactViewController.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		2B7518911C0F81D1007F7A55 /* AFNetworking+PromiseKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AFNetworking+PromiseKit.swift"; sourceTree = "<group>"; };
 		2B7518931C102512007F7A55 /* ApiCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiCommunicator.swift; sourceTree = "<group>"; };
 		2B7518961C10304E007F7A55 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		2B7518981C103E6C007F7A55 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		2B9C26C51C0E3757003E8B62 /* OrderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		2B9C26C71C0E398F003E8B62 /* AddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		3E7CEFAC9AAB18C09D885C1E /* Pods-OSOrders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSOrders.release.xcconfig"; path = "Pods/Target Support Files/Pods-OSOrders/Pods-OSOrders.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				2B7518961C10304E007F7A55 /* Contact.swift */,
+				2B7518981C103E6C007F7A55 /* Order.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				2B7518971C10304E007F7A55 /* Contact.swift in Sources */,
 				2B75188C1C0E4D7D007F7A55 /* ContactCell.swift in Sources */,
+				2B7518991C103E6C007F7A55 /* Order.swift in Sources */,
 				2B7518921C0F81D1007F7A55 /* AFNetworking+PromiseKit.swift in Sources */,
 				2B5D02271B5B81FB005B854E /* AppDelegate.swift in Sources */,
 				2B7518941C102512007F7A55 /* ApiCommunicator.swift in Sources */,
