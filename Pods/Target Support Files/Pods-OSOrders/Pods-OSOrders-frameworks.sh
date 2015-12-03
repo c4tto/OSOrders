@@ -87,11 +87,15 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-OSOrders/AFNetworking.framework"
   install_framework "Pods-OSOrders/OMGHTTPURLRQ.framework"
   install_framework "Pods-OSOrders/PromiseKit.framework"
+  install_framework "Pods-OSOrders/Realm.framework"
+  install_framework "Pods-OSOrders/RealmSwift.framework"
   install_framework "Pods-OSOrders/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-OSOrders/AFNetworking.framework"
   install_framework "Pods-OSOrders/OMGHTTPURLRQ.framework"
   install_framework "Pods-OSOrders/PromiseKit.framework"
+  install_framework "Pods-OSOrders/Realm.framework"
+  install_framework "Pods-OSOrders/RealmSwift.framework"
   install_framework "Pods-OSOrders/SwiftyJSON.framework"
 fi

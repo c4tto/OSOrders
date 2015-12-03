@@ -7,9 +7,5 @@ target 'OSOrders' do
 	pod 'AFNetworking', '~> 2.0'
 	pod 'SwiftyJSON', '~> 2.3'
 	pod 'PromiseKit', '~> 3.0'
+    pod 'RealmSwift'
 end
-
-target 'OSOrdersTests' do
-
-end
-
