@@ -15,6 +15,10 @@ class Order: Object {
     dynamic var name: String?
     dynamic var count: Int = 0
     
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
     required init() {
         super.init()
     }

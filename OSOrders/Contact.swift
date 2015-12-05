@@ -16,6 +16,10 @@ class Contact: Object {
     dynamic var phone: String?
     dynamic var pictureUrlString: String?
     
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
     required init() {
         super.init()
     }
