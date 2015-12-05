@@ -25,23 +25,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact-default" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-ha-64m">
-                                            <rect key="frame" x="8" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="8" y="8" width="92" height="92"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="vLg-ha-64m" secondAttribute="height" multiplier="1:1" id="uF2-1q-AWx"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daniel Novak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghS-by-G5u">
-                                            <rect key="frame" x="116" y="17" width="118" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 456 789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUV-tp-T2Z">
+                                            <rect key="frame" x="108" y="58" width="93" height="20"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 456 789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUV-tp-T2Z">
-                                            <rect key="frame" x="116" y="49" width="93" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daniel Novak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghS-by-G5u">
+                                            <rect key="frame" x="108" y="26" width="118" height="24"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -52,9 +52,9 @@
                                         <constraint firstItem="TUV-tp-T2Z" firstAttribute="top" secondItem="ghS-by-G5u" secondAttribute="bottom" constant="8" id="AZa-T5-Q8v"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="TUV-tp-T2Z" secondAttribute="trailing" constant="8" id="CP2-cf-xQX"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="vLg-ha-64m" secondAttribute="leading" id="S5a-by-3R5"/>
-                                        <constraint firstItem="ghS-by-G5u" firstAttribute="top" secondItem="9Q8-tE-EGH" secondAttribute="topMargin" constant="9" id="WOD-2G-q5X"/>
+                                        <constraint firstItem="ghS-by-G5u" firstAttribute="top" secondItem="9Q8-tE-EGH" secondAttribute="topMargin" constant="18" id="WOD-2G-q5X"/>
                                         <constraint firstItem="ghS-by-G5u" firstAttribute="leading" secondItem="vLg-ha-64m" secondAttribute="trailing" constant="8" id="X8p-cc-n4T"/>
-                                        <constraint firstItem="vLg-ha-64m" firstAttribute="top" secondItem="9Q8-tE-EGH" secondAttribute="topMargin" constant="-8" id="f5J-Tf-vRh"/>
+                                        <constraint firstItem="vLg-ha-64m" firstAttribute="top" secondItem="9Q8-tE-EGH" secondAttribute="topMargin" id="f5J-Tf-vRh"/>
                                         <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ghS-by-G5u" secondAttribute="trailing" constant="8" id="guQ-E8-uEF"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="vLg-ha-64m" secondAttribute="bottom" id="plf-2A-c71"/>
                                     </constraints>
@@ -131,7 +131,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="OrderCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderCell" id="UZg-a2-Wyk" customClass="OrderCell" customModule="OSOrders" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" restorationIdentifier="OrderCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderCell" id="UZg-a2-Wyk" customClass="OrderCell" customModule="OSOrders" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UZg-a2-Wyk" id="9Sp-rz-8bD">
