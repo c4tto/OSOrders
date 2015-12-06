@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
 import PromiseKit
 
-class ContactListViewController: UITableViewController {
+class ContactListViewController: UITableViewController, AddContactViewControllerDelegate {
     
-    var contacts: [Contact] = []
+    var contacts: [Contact] = [] {
+        didSet {
+            contacts = contacts.sort { $0.name < $1.name }
+        }
+    }
 
     // MARK: - View Lifecycle
     
@@ -29,7 +32,7 @@ class ContactListViewController: UITableViewController {
         self.refresh()
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table View Data Source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -49,19 +52,41 @@ class ContactListViewController: UITableViewController {
         return UIView()
     }
     
-    // MARK: - Table view delegate
+    // MARK: - Table View Delegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let controller = self.storyboard!.instantiateViewControllerWithIdentifier("OrderListViewController") as! OrderListViewController
         controller.contact = self.contacts[indexPath.row]
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
+    // MARK: - Add Contact View Controller Delegate
+    
+    func addContactViewControllerDidFinish(controller: AddContactViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func addContactViewController(controller: AddContactViewController,
+        didFillInContactWithName name: String, phone: String) {
+        
+        ApiCommunicator().addContact(name: name, phone: phone)
+            .then { [weak self] contact -> Void in
+                self?.contacts += [contact]
+                self?.tableView.reloadData()
+            }
+            .error { error in
+                print(error)
+            }
+        
+    }
 
     // MARK: - Actions
     
     @IBAction func showAddContact(sender: AnyObject) {
-        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("AddContactNavController");
-        self.presentViewController(controller, animated: true, completion: nil)
+        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("AddContactViewController") as! AddContactViewController;
+        controller.delegate = self
+        let navController = UINavigationController(rootViewController: controller)
+        self.presentViewController(navController, animated: true, completion: nil)
     }
     
     func refresh() {
@@ -70,8 +95,7 @@ class ContactListViewController: UITableViewController {
             self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl!.frame.size.height), animated: true)
         }
         
-        let communicator = ApiCommunicator()
-        communicator.loadContacts()
+        ApiCommunicator().loadContacts()
             .then { [weak self] contacts -> Void in
                 self?.contacts = contacts
                 self?.tableView.reloadData()
@@ -84,3 +108,4 @@ class ContactListViewController: UITableViewController {
             }
     }
 }
+

@@ -209,8 +209,8 @@
                         <sections>
                             <tableViewSection id="4WZ-4R-yoA">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OFM-0k-ben">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="OFM-0k-ben">
+                                        <rect key="frame" x="0.0" y="35" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OFM-0k-ben" id="kLb-c7-aqe">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -221,6 +221,9 @@
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="FcF-Yj-Ifo" id="gah-uU-fFX"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -233,8 +236,8 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2Yk-yb-6YV">
-                                        <rect key="frame" x="0.0" y="143" width="600" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="2Yk-yb-6YV">
+                                        <rect key="frame" x="0.0" y="79" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Yk-yb-6YV" id="93g-MY-mUv">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -245,6 +248,9 @@
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="FcF-Yj-Ifo" id="D4G-OQ-HlM"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <animations/>
@@ -262,7 +268,7 @@
                             <tableViewSection id="jWz-dD-0ZI">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Yse-d2-cf5">
-                                        <rect key="frame" x="0.0" y="223" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="159" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yse-d2-cf5" id="Ucn-iz-Ncx">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -303,27 +309,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="Rqp-qc-5Zk" id="mCA-dI-ocY"/>
+                        <outlet property="phoneTextField" destination="clW-gS-sJH" id="wYy-Hl-Mlb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53O-ag-4mO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-69" y="958"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="GOu-0x-xdq">
-            <objects>
-                <navigationController storyboardIdentifier="AddContactNavController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="80A-Nw-QKF" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pa8-m2-DYf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="FcF-Yj-Ifo" kind="relationship" relationship="rootViewController" id="uDj-r7-L6G"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jQq-Ml-E14" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-730" y="958"/>
+            <point key="canvasLocation" x="621" y="930"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Biu-pe-g0V">

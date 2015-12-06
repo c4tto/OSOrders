@@ -41,7 +41,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         self.refresh()
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table View Data Source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -69,8 +69,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
             self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.size.height), animated: true)
         }
         
-        let communicator = ApiCommunicator()
-        communicator.loadOrders(contactId: self.contact.id)
+        ApiCommunicator().loadOrders(contactId: self.contact.id)
             .then { [weak self] orders -> Void in
                 self?.orders = orders
                 self?.tableView.reloadData()
