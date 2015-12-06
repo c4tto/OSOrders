@@ -28,15 +28,14 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         if let contactId = contact?.id {
             let communicator = ApiCommunicator()
             communicator.loadOrders(contactId: contactId)
-                .then { [weak self] json -> Promise<[Order]?> in
+                .then { [weak self] json -> Void in
                     print(json)
                     self?.orders = json["items"].arrayValue.map { Order(json: $0) }
                     self?.tableView.reloadData()
-                    return Promise(self?.orders)
                 }
                 .error { error in
                     print(error)
-            }
+                }
         }
     }
     

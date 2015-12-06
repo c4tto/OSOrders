@@ -23,11 +23,10 @@ class ContactListViewController: UITableViewController {
         
         let communicator = ApiCommunicator()
         communicator.loadContacts()
-            .then { [weak self] json -> Promise<[Contact]?> in
+            .then { [weak self] json -> Void in
                 print(json)
                 self?.contacts = json["items"].arrayValue.map { Contact(json: $0) }
                 self?.tableView.reloadData()
-                return Promise(self?.contacts)
             }
             .error { error in
                 print(error)
