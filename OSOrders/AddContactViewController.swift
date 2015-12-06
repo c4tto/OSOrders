@@ -10,7 +10,7 @@ import UIKit
 
 protocol AddContactViewControllerDelegate: class {
     func addContactViewController(controller: AddContactViewController,
-        didFillInContactWithName name: String, phone: String)
+        didFillInFormWithName name: String, phone: String)
     func addContactViewControllerDidFinish(controller: AddContactViewController)
 }
 
@@ -44,7 +44,7 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func addContact() {
         if let name = self.nameTextField.text, phone = self.phoneTextField.text where !name.isEmpty && !phone.isEmpty {
-            self.delegate?.addContactViewController(self, didFillInContactWithName: name, phone: phone)
+            self.delegate?.addContactViewController(self, didFillInFormWithName: name, phone: phone)
             self.dismiss()
         } else {
             let alertController = UIAlertController(title: "Error", message: "All fields must be filled in!", preferredStyle: .Alert)

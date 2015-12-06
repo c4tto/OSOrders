@@ -67,7 +67,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
     }
     
     func addContactViewController(controller: AddContactViewController,
-        didFillInContactWithName name: String, phone: String) {
+        didFillInFormWithName name: String, phone: String) {
         
         ApiCommunicator().addContact(name: name, phone: phone)
             .then { [weak self] contact -> Void in
