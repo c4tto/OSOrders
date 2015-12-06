@@ -9,7 +9,6 @@
 import UIKit
 
 import PromiseKit
-import SwiftyJSON
 
 class OrderListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -28,9 +27,8 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         if let contactId = contact?.id {
             let communicator = ApiCommunicator()
             communicator.loadOrders(contactId: contactId)
-                .then { [weak self] json -> Void in
-                    print(json)
-                    self?.orders = json["items"].arrayValue.map { Order(json: $0) }
+                .then { [weak self] orders -> Void in
+                    self?.orders = orders
                     self?.tableView.reloadData()
                 }
                 .error { error in
@@ -53,5 +51,9 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier("OrderCell", forIndexPath: indexPath) as! OrderCell
         cell.order = self.orders[indexPath.row]
         return cell;
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
 }

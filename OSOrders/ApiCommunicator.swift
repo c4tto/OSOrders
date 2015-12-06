@@ -23,26 +23,32 @@ class ApiCommunicator: NSObject {
         return manager
     }()
     
-    func loadContacts() -> Promise<JSON> {
+    func loadContacts() -> Promise<[Contact]> {
         return self.requestOperationManager.GET(self.contactPath, parameters: nil)
-            .then { response -> Promise<JSON> in
-                return Promise(JSON(response))
+            .then { response -> Promise<[Contact]> in
+                print(response)
+                let contacts = JSON(response)["items"].arrayValue.map { Contact(json: $0) }
+                return Promise(contacts)
             }
     }
     
-    func loadOrders(contactId contactId: String) -> Promise<JSON> {
+    func loadOrders(contactId contactId: String) -> Promise<[Order]> {
         return self.requestOperationManager.GET(self.orderPath + contactId, parameters: nil)
-            .then { response -> Promise<JSON> in
-                return Promise(JSON(response))
+            .then { response -> Promise<[Order]> in
+                print(response)
+                let orders = JSON(response)["items"].arrayValue.map { Order(json: $0) }
+                return Promise(orders)
             }
     }
     
-    func addContact(name name: String, phone: String) -> Promise<JSON> {
+    func addContact(name name: String, phone: String) -> Promise<Contact> {
         return self.requestOperationManager.POST(self.contactPath, parameters: [
             "name": name,
             "phone": phone,
-        ]).then({ response -> Promise<JSON> in
-            return Promise(JSON(response))
+        ]).then({ response -> Promise<Contact> in
+            print(response)
+            let contact = Contact(json: JSON(response))
+            return Promise(contact)
         })
     }
 }

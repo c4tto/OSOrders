@@ -9,7 +9,6 @@
 import UIKit
 
 import PromiseKit
-import SwiftyJSON
 
 class ContactListViewController: UITableViewController {
     
@@ -23,9 +22,8 @@ class ContactListViewController: UITableViewController {
         
         let communicator = ApiCommunicator()
         communicator.loadContacts()
-            .then { [weak self] json -> Void in
-                print(json)
-                self?.contacts = json["items"].arrayValue.map { Contact(json: $0) }
+            .then { [weak self] contacts -> Void in
+                self?.contacts = contacts
                 self?.tableView.reloadData()
             }
             .error { error in
@@ -47,6 +45,10 @@ class ContactListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("ContactCell", forIndexPath: indexPath) as! ContactCell
         cell.contact = self.contacts[indexPath.row]
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
     
     // MARK: - Table view delegate
