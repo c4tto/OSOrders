@@ -98,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMv-FC-pER">
-                                <rect key="frame" x="0.0" y="20" width="600" height="82"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="66"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSC-lI-tQ2">
                                         <rect key="frame" x="8" y="8" width="51" height="21"/>
@@ -124,11 +124,17 @@
                                     <constraint firstAttribute="height" constant="82" id="brC-BG-u13"/>
                                     <constraint firstItem="a1n-CF-aho" firstAttribute="top" secondItem="vSC-lI-tQ2" secondAttribute="bottom" constant="8" id="cfV-lY-BN0"/>
                                     <constraint firstItem="vSC-lI-tQ2" firstAttribute="leading" secondItem="uMv-FC-pER" secondAttribute="leading" constant="8" id="j0O-dt-rbI"/>
+                                    <constraint firstAttribute="bottom" secondItem="a1n-CF-aho" secondAttribute="bottom" constant="8" id="xJZ-Ar-drA"/>
                                     <constraint firstItem="vSC-lI-tQ2" firstAttribute="top" secondItem="uMv-FC-pER" secondAttribute="top" constant="8" id="xyg-Pk-c6H"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="brC-BG-u13"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MOw-fh-LQQ">
-                                <rect key="frame" x="0.0" y="102" width="600" height="498"/>
+                                <rect key="frame" x="0.0" y="86" width="600" height="514"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -147,7 +153,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e26-vP-LQb">
-                                                    <rect key="frame" x="8" y="10" width="88" height="24"/>
+                                                    <rect key="frame" x="16" y="10" width="88" height="24"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -160,7 +166,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="7Yf-FR-eHk" secondAttribute="trailing" id="NAK-8w-KOa"/>
                                                 <constraint firstItem="7Yf-FR-eHk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="e26-vP-LQb" secondAttribute="trailing" constant="8" id="U3u-d5-8Wd"/>
                                                 <constraint firstItem="7Yf-FR-eHk" firstAttribute="centerY" secondItem="9Sp-rz-8bD" secondAttribute="centerY" id="aeW-5i-sp1"/>
-                                                <constraint firstItem="e26-vP-LQb" firstAttribute="leading" secondItem="9Sp-rz-8bD" secondAttribute="leadingMargin" id="kSa-jp-0Ur"/>
+                                                <constraint firstItem="e26-vP-LQb" firstAttribute="leading" secondItem="9Sp-rz-8bD" secondAttribute="leadingMargin" constant="8" id="kSa-jp-0Ur"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
