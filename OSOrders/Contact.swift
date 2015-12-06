@@ -19,11 +19,7 @@ class Contact: Object {
     override static func primaryKey() -> String? {
         return "id"
     }
-    
-    required init() {
-        super.init()
-    }
-    
+        
     convenience init(json: JSON) {
         self.init()
         

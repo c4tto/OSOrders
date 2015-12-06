@@ -14,21 +14,19 @@ class ContactListViewController: UITableViewController {
     
     var contacts: [Contact] = []
 
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
+        self.refreshControl!.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        let communicator = ApiCommunicator()
-        communicator.loadContacts()
-            .then { [weak self] contacts -> Void in
-                self?.contacts = contacts
-                self?.tableView.reloadData()
-            }
-            .error { error in
-                print(error)
-            }
+        self.refresh()
     }
 
     // MARK: - Table view data source
@@ -67,6 +65,22 @@ class ContactListViewController: UITableViewController {
     }
     
     func refresh() {
-        self.refreshControl?.endRefreshing()
+        if self.contacts.count == 0 {
+            self.refreshControl!.beginRefreshing()
+            self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl!.frame.size.height), animated: true)
+        }
+        
+        let communicator = ApiCommunicator()
+        communicator.loadContacts()
+            .then { [weak self] contacts -> Void in
+                self?.contacts = contacts
+                self?.tableView.reloadData()
+            }
+            .always { [weak self] in
+                self?.refreshControl!.endRefreshing()
+            }
+            .error { error in
+                print(error)
+            }
     }
 }
