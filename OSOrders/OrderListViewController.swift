@@ -33,10 +33,6 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         
         self.navigationItem.title = self.contact?.name
         self.phoneLabel.text = self.contact?.phone
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         
         self.refresh()
     }

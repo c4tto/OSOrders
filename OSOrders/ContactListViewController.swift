@@ -24,14 +24,10 @@ class ContactListViewController: UITableViewController, AddContactViewController
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         
         self.refresh()
     }
-
+    
     // MARK: - Table View Data Source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
