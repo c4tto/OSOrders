@@ -17,17 +17,17 @@ class ContactCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        nameLabel.text = nil
-        phoneLabel.text = nil
+        self.nameLabel.text = nil
+        self.phoneLabel.text = nil
     }
     
     weak var contact: Contact? {
         didSet {
-            nameLabel.text = contact?.name
-            phoneLabel.text = contact?.phone
-            pictureImageView.image = UIImage(named: "contact-default")
+            self.nameLabel.text = contact?.name
+            self.phoneLabel.text = contact?.phone
+            self.pictureImageView.image = UIImage(named: "contact-default")
             if let pictureUrl = contact?.pictureUrl {
-                pictureImageView.setImageWithURL(pictureUrl, placeholderImage: pictureImageView.image)
+                self.pictureImageView.setImageWithURL(pictureUrl, placeholderImage: pictureImageView.image)
             }
         }
     }

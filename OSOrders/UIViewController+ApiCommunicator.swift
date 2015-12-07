@@ -11,7 +11,6 @@ import UIKit
 extension UIViewController {
     
     var apiCommunicator: ApiCommunicator {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        return appDelegate.apiCommunicator
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).apiCommunicator
     }
 }

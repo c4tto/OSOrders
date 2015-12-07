@@ -16,14 +16,14 @@ class OrderCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        nameLabel.text = nil
-        countLabel.text = nil
+        self.nameLabel.text = nil
+        self.countLabel.text = nil
     }
     
     weak var order: Order? {
         didSet {
-            nameLabel.text = order?.name
-            countLabel.text = (order?.count).flatMap { "\($0)x" }
+            self.nameLabel.text = order?.name
+            self.countLabel.text = (order?.count).flatMap { "\($0)x" }
         }
     }
 

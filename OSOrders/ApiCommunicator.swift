@@ -50,13 +50,11 @@ class ApiCommunicator: NSObject {
     }
     
     func addContact(name name: String, phone: String) -> Promise<Contact> {
-        return self.requestOperationManager.POST(self.contactPath, parameters: [
-            "name": name,
-            "phone": phone,
-        ]).then { response -> Promise<Contact> in
-            //print(response)
-            let contact = Contact(json: JSON(response))
-            return Promise(contact)
-        }
+        return self.requestOperationManager.POST(self.contactPath, parameters: ["name": name, "phone": phone])
+            .then { response -> Promise<Contact> in
+                //print(response)
+                let contact = Contact(json: JSON(response))
+                return Promise(contact)
+            }
     }
 }
