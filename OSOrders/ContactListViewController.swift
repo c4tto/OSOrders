@@ -65,7 +65,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
     func addContactViewController(controller: AddContactViewController,
         didFillInFormWithName name: String, phone: String) {
         
-        ApiCommunicator().addContact(name: name, phone: phone)
+        self.apiCommunicator.addContact(name: name, phone: phone)
             .then { [weak self] contact -> Void in
                 self?.contacts += [contact]
                 self?.tableView.reloadData()
@@ -86,12 +86,14 @@ class ContactListViewController: UITableViewController, AddContactViewController
     }
     
     func refresh() {
-        if self.contacts.count == 0 {
+        self.contacts = self.apiCommunicator.contacts;
+        
+        if !self.refreshControl!.refreshing && self.contacts.count == 0 {
             self.refreshControl!.beginRefreshing()
             self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl!.frame.size.height), animated: true)
         }
         
-        ApiCommunicator().loadContacts()
+        self.apiCommunicator.loadContacts()
             .then { [weak self] contacts -> Void in
                 self?.contacts = contacts
                 self?.tableView.reloadData()

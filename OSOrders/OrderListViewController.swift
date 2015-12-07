@@ -60,12 +60,14 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - Actions
     
     func refresh() {
-        if self.orders.count == 0 {
+        self.orders = self.apiCommunicator.orders(contactId: self.contact.id)
+        
+        if !self.refreshControl.refreshing && self.orders.count == 0 {
             self.refreshControl.beginRefreshing()
             self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.size.height), animated: true)
         }
         
-        ApiCommunicator().loadOrders(contactId: self.contact.id)
+        self.apiCommunicator.loadOrders(contactId: self.contact.id)
             .then { [weak self] orders -> Void in
                 self?.orders = orders
                 self?.tableView.reloadData()
@@ -75,7 +77,6 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
             }
             .error { error in
                 print(error)
-            }
-        
+            }   
     }
 }

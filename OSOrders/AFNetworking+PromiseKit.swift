@@ -10,6 +10,7 @@ import AFNetworking
 import PromiseKit
 
 extension AFHTTPRequestOperationManager {
+    
     func GET(urlString: String, parameters: AnyObject?) -> Promise<AnyObject> {
         return Promise { fullfill, reject in
             self.GET(urlString, parameters: parameters,

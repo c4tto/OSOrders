@@ -9,6 +9,7 @@
 import AFNetworking
 import PromiseKit
 import SwiftyJSON
+import RealmSwift
 
 class ApiCommunicator: NSObject {
     
@@ -23,32 +24,39 @@ class ApiCommunicator: NSObject {
         return manager
     }()
     
-    func loadContacts() -> Promise<[Contact]> {
-        return self.requestOperationManager.GET(self.contactPath, parameters: nil)
-            .then { response -> Promise<[Contact]> in
-                print(response)
-                let contacts = JSON(response)["items"].arrayValue.map { Contact(json: $0) }
-                return Promise(contacts)
+    var contacts: [Contact] {
+        return []
+    }
+    
+    func orders(contactId contactId: String) -> [Order] {
+        return []
+    }
+    
+    func loadItems<T: Item>(path: String) -> Promise<[T]> {
+        return self.requestOperationManager.GET(path, parameters: nil)
+            .then { response -> Promise<[T]> in
+                //print(response)
+                let items = JSON(response)["items"].arrayValue.map { T(json: $0) }
+                return Promise(items)
             }
     }
     
+    func loadContacts() -> Promise<[Contact]> {
+        return self.loadItems(self.contactPath)
+    }
+    
     func loadOrders(contactId contactId: String) -> Promise<[Order]> {
-        return self.requestOperationManager.GET(self.orderPath + contactId, parameters: nil)
-            .then { response -> Promise<[Order]> in
-                print(response)
-                let orders = JSON(response)["items"].arrayValue.map { Order(json: $0) }
-                return Promise(orders)
-            }
+        return self.loadItems(self.orderPath + contactId)
     }
     
     func addContact(name name: String, phone: String) -> Promise<Contact> {
         return self.requestOperationManager.POST(self.contactPath, parameters: [
             "name": name,
             "phone": phone,
-        ]).then({ response -> Promise<Contact> in
-            print(response)
+        ]).then { response -> Promise<Contact> in
+            //print(response)
             let contact = Contact(json: JSON(response))
             return Promise(contact)
-        })
+        }
     }
 }

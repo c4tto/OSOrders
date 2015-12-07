@@ -9,22 +9,13 @@
 import RealmSwift
 import SwiftyJSON
 
-class Order: Object {
+class Order: Item {
     
-    dynamic var id: String = ""
-    dynamic var name: String?
     dynamic var count: Int = 0
     
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    convenience init(json: JSON) {
-        self.init()
+    override func update(json json: JSON) {
+        super.update(json: json)
         
-        id = json["id"].stringValue
-        name = json["name"].string
         count = json["count"].intValue
     }
-
 }

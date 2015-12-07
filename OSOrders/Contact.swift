@@ -9,25 +9,19 @@
 import RealmSwift
 import SwiftyJSON
 
-class Contact: Object {
-
-    dynamic var id: String = ""
-    dynamic var name: String?
+class Contact: Item {
+    
     dynamic var phone: String?
     dynamic var pictureUrlString: String?
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
+
+    override func update(json json: JSON) {
+        super.update(json: json)
         
-    convenience init(json: JSON) {
-        self.init()
-        
-        id = json["id"].stringValue
-        name = json["name"].string
         phone = json["phone"].string
         pictureUrlString = json["pictureUrl"].string
     }
+    
+    // MARK: - Convenience attributes
     
     var pictureUrl: NSURL? {
         return pictureUrlString.flatMap { NSURL(string: $0) }
