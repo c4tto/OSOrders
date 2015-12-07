@@ -71,7 +71,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
                 self?.tableView.reloadData()
             }
             .error { error in
-                print(error)
+                self.showError(error)
             }
         
     }
@@ -102,7 +102,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
                 self?.refreshControl!.endRefreshing()
             }
             .error { error in
-                print(error)
+                self.showError(error)
             }
     }
 }

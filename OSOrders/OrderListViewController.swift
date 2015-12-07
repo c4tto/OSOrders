@@ -76,7 +76,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
                 self?.refreshControl.endRefreshing()
             }
             .error { error in
-                print(error)
+                self.showError(error)
             }   
     }
 }

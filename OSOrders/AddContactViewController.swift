@@ -47,9 +47,10 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
             self.delegate?.addContactViewController(self, didFillInFormWithName: name, phone: phone)
             self.dismiss()
         } else {
-            let alertController = UIAlertController(title: "Error", message: "All fields must be filled in!", preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
-            self.presentViewController(alertController, animated: true, completion: nil)
+            let error = NSError(domain: "OSOrdersErrorDomain", code: -1, userInfo: [
+                NSLocalizedDescriptionKey: "All fields must be filled in!"
+            ]);
+            self.showError(error)
         }
     }
     

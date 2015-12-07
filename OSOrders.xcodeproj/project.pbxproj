@@ -23,6 +23,7 @@
 		2B9238541C1569D60015CC89 /* UIViewController+ApiCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9238531C1569D60015CC89 /* UIViewController+ApiCommunicator.swift */; };
 		2B9C26C61C0E3757003E8B62 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C26C51C0E3757003E8B62 /* OrderListViewController.swift */; };
 		2B9C26C81C0E398F003E8B62 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9C26C71C0E398F003E8B62 /* AddContactViewController.swift */; };
+		2BCA61D21C1571E5000EF3FB /* UIViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCA61D11C1571E5000EF3FB /* UIViewController+Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		2B9238531C1569D60015CC89 /* UIViewController+ApiCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ApiCommunicator.swift"; sourceTree = "<group>"; };
 		2B9C26C51C0E3757003E8B62 /* OrderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		2B9C26C71C0E398F003E8B62 /* AddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
+		2BCA61D11C1571E5000EF3FB /* UIViewController+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Error.swift"; sourceTree = "<group>"; };
 		3E7CEFAC9AAB18C09D885C1E /* Pods-OSOrders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSOrders.release.xcconfig"; path = "Pods/Target Support Files/Pods-OSOrders/Pods-OSOrders.release.xcconfig"; sourceTree = "<group>"; };
 		BBEA8D5CEE30D6A3F63080C6 /* Pods_OSOrders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSOrders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DEC81ADDE408A1AFEB36F8 /* Pods-OSOrders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSOrders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSOrders/Pods-OSOrders.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				2B7518911C0F81D1007F7A55 /* AFNetworking+PromiseKit.swift */,
 				2B9238531C1569D60015CC89 /* UIViewController+ApiCommunicator.swift */,
+				2BCA61D11C1571E5000EF3FB /* UIViewController+Error.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				2B9C26C81C0E398F003E8B62 /* AddContactViewController.swift in Sources */,
 				2B9238541C1569D60015CC89 /* UIViewController+ApiCommunicator.swift in Sources */,
 				2B9C26C61C0E3757003E8B62 /* OrderListViewController.swift in Sources */,
+				2BCA61D21C1571E5000EF3FB /* UIViewController+Error.swift in Sources */,
 				2B75188E1C0E4D9E007F7A55 /* OrderCell.swift in Sources */,
 				2B2FA9041B5BB13200616150 /* ContactListViewController.swift in Sources */,
 			);
