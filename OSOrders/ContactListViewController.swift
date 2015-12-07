@@ -70,8 +70,8 @@ class ContactListViewController: UITableViewController, AddContactViewController
                 self?.contacts += [contact]
                 self?.tableView.reloadData()
             }
-            .error { error in
-                self.showError(error)
+            .error { [weak self] error in
+                self?.showError(error)
             }
         
     }
@@ -101,8 +101,8 @@ class ContactListViewController: UITableViewController, AddContactViewController
             .always { [weak self] in
                 self?.refreshControl!.endRefreshing()
             }
-            .error { error in
-                self.showError(error)
+            .error { [weak self] error in
+                self?.showError(error)
             }
     }
 }

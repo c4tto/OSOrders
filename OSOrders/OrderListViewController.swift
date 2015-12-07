@@ -75,8 +75,8 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
             .always { [weak self] in
                 self?.refreshControl.endRefreshing()
             }
-            .error { error in
-                self.showError(error)
+            .error { [weak self] error in
+                self?.showError(error)
             }   
     }
 }
