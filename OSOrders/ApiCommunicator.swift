@@ -45,8 +45,8 @@ class ApiCommunicator: NSObject {
         return self.loadItems(self.contactPath)
     }
     
-    func loadOrders(contactId contactId: String) -> Promise<[Order]> {
-        return self.loadItems(self.orderPath + contactId)
+    func loadOrders(contact contact: Contact) -> Promise<[Order]> {
+        return self.loadItems(self.orderPath + contact.id)
     }
     
     func addContact(name name: String, phone: String) -> Promise<Contact> {

@@ -67,7 +67,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
             self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.size.height), animated: true)
         }
         
-        self.apiCommunicator.loadOrders(contactId: self.contact.id)
+        self.apiCommunicator.loadOrders(contact: self.contact)
             .then { [weak self] orders -> Void in
                 self?.orders = orders
                 self?.tableView.reloadData()
