@@ -79,6 +79,6 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
             }
             .error { [weak self] error in
                 self?.showError(error)
-            }   
+            }
     }
 }
