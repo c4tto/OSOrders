@@ -15,7 +15,6 @@ class OrderCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.nameLabel.text = nil
         self.countLabel.text = nil
     }

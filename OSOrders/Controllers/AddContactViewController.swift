@@ -29,7 +29,6 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.nameTextField.becomeFirstResponder()
     }
     

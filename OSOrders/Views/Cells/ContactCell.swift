@@ -16,7 +16,6 @@ class ContactCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.nameLabel.text = nil
         self.phoneLabel.text = nil
     }

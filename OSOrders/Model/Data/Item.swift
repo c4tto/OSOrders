@@ -14,17 +14,12 @@ class Item: Object {
     dynamic var id: String = ""
     dynamic var name: String?
     
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    
     required init() {
         super.init()
     }
     
     required init(json: JSON) {
         super.init()
-        
         self.update(json: json)
     }
     
@@ -33,4 +28,9 @@ class Item: Object {
         name = json["name"].string
     }
 
+    // MARK: - Static Methods
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

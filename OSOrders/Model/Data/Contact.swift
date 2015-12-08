@@ -16,7 +16,6 @@ class Contact: Item {
 
     override func update(json json: JSON) {
         super.update(json: json)
-        
         phone = json["phone"].string
         pictureUrlString = json["pictureUrl"].string
     }

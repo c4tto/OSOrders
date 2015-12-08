@@ -15,7 +15,6 @@ class Order: Item {
     
     override func update(json json: JSON) {
         super.update(json: json)
-        
         count = json["count"].intValue
     }
 }
