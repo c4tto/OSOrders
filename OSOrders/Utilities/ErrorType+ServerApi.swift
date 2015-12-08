@@ -13,7 +13,7 @@ import SwiftyJSON
 extension ErrorType {
     
     var serverApiError: ErrorType? {
-		if let jsonData = ((self as Any) as! NSError).userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as? NSData {
+        if let jsonData = ((self as Any) as! NSError).userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as? NSData {
             let json = JSON(data: jsonData)
 			
             if let code = json["error"]["code"].int, message = json["error"]["message"].string {
