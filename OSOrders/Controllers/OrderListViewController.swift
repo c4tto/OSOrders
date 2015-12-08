@@ -34,6 +34,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         
         self.tableView.addSubview(self.refreshControl)
+        self.tableView.scrollsToTop = true
         
         self.navigationItem.title = self.contact?.name
         self.phoneLabel.text = self.contact?.phone
