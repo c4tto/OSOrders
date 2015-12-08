@@ -41,7 +41,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(ContactCell.className, forIndexPath: indexPath) as! ContactCell
+        let cell = tableView.dequeueReuesableCellOfType(ContactCell.self, forIndexPath: indexPath)
         cell.contact = self.contacts[indexPath.row]
         return cell
     }
@@ -53,7 +53,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
     // MARK: - Table View Delegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let controller = self.storyboard!.instantiateViewControllerWithIdentifier(OrderListViewController.className) as! OrderListViewController
+        let controller = self.storyboard!.instantiateViewControllerOfType(OrderListViewController.self)
         controller.contact = self.contacts[indexPath.row]
         self.navigationController!.pushViewController(controller, animated: true)
     }
@@ -61,7 +61,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
     // MARK: - Actions
     
     @IBAction func showAddContact(sender: AnyObject) {
-        let controller = self.storyboard!.instantiateViewControllerWithIdentifier(AddContactViewController.className) as! AddContactViewController
+        let controller = self.storyboard!.instantiateViewControllerOfType(AddContactViewController.self)
         controller.delegate = self
         let navController = UINavigationController(rootViewController: controller)
         self.presentViewController(navController, animated: true, completion: nil)
