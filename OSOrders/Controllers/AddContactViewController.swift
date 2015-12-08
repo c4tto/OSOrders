@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import JGProgressHUD
 
 protocol AddContactViewControllerDelegate: class {
     func addContactViewController(controller: AddContactViewController,
@@ -17,19 +16,19 @@ protocol AddContactViewControllerDelegate: class {
 
 class AddContactViewController: UITableViewController, UITextFieldDelegate {
     
-    weak var delegate: AddContactViewControllerDelegate?
-    
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var phoneTextField: UITextField!
     @IBOutlet var addContactButton: UIButton!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-    var loading: Bool = false {
+    weak var delegate: AddContactViewControllerDelegate?
+    
+    var sending: Bool = false {
         didSet {
-            self.addContactButton.enabled = !loading
-            self.nameTextField.enabled = !loading
-            self.phoneTextField.enabled = !loading
-            loading ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
+            self.addContactButton.enabled = !sending
+            self.nameTextField.enabled = !sending
+            self.phoneTextField.enabled = !sending
+            sending ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
         }
     }
 
@@ -71,18 +70,21 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func addContact(name name: String, phone: String) {
-        self.loading = true
+        if self.sending {
+            return
+        }
         
+        self.sending = true
         self.apiCommunicator.addContact(name: name, phone: phone)
             .then { [weak self] contact -> Void in
                 self?.delegate?.addContactViewController(self!, didAddContact: contact)
                 self?.dismiss()
             }
             .always { [weak self] in
-                self?.loading = false
+                self?.sending = false
             }
             .error { [weak self] error in
                 self?.showError(error)
-        }
+            }
     }
 }

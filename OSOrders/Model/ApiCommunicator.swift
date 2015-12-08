@@ -27,36 +27,52 @@ class ApiCommunicator: NSObject {
     }()
     
     var contacts: [Contact] {
-        // TODO: return contact list stored in Realm
-        return []
-    }
-    
-    func orders(contactId contactId: String) -> [Order] {
-        // TODO: return orderlist list stored in Realm
-        return []
+        let realm = try! Realm()
+        return realm.objects(Contact).map { $0 }
     }
     
     func loadItems<T: Item>(path: String) -> Promise<[T]> {
         return self.requestOperationManager.GET(path, parameters: nil)
             .then { response -> Promise<[T]> in
                 let items = JSON(response)["items"].arrayValue.map { T(json: $0) }
-                // TODO: store item list to Realm
                 return Promise(items)
             }
     }
     
     func loadContacts() -> Promise<[Contact]> {
         return self.loadItems(self.contactPath)
+            .then { (contacts: [Contact]) -> Promise<[Contact]> in
+                let realm = try! Realm()
+                try! realm.write {
+                    realm.add(contacts, update: true)
+                }
+                return Promise(contacts)
+            }
     }
     
     func loadOrders(contact contact: Contact) -> Promise<[Order]> {
         return self.loadItems(self.orderPath + contact.id)
+            .then { (orders: [Order]) -> Promise<[Order]> in
+                let realm = try! Realm()
+                try! realm.write {
+                    orders.forEach { $0.contact = contact }
+                    realm.add(orders, update: true)
+                }
+                return Promise(orders)
+            }
     }
     
     func addContact(name name: String, phone: String) -> Promise<Contact> {
-        return self.requestOperationManager.POST(self.contactPath, parameters: ["name": name, "phone": phone])
+        return self.requestOperationManager.POST(self.contactPath, parameters: [
+                "name": name,
+                "phone": phone
+            ])
             .then { response -> Promise<Contact> in
                 let contact = Contact(json: JSON(response))
+                let realm = try! Realm()
+                try! realm.write {
+                    realm.add(contact)
+                }
                 return Promise(contact)
             }
     }

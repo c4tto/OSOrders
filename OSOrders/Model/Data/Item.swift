@@ -14,12 +14,8 @@ class Item: Object {
     dynamic var id: String = ""
     dynamic var name: String?
     
-    required init() {
-        super.init()
-    }
-    
-    required init(json: JSON) {
-        super.init()
+    convenience required init(json: JSON) {
+        self.init()
         self.update(json: json)
     }
     

@@ -11,6 +11,9 @@ import PromiseKit
 
 class OrderListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var phoneLabel: UILabel!
+    
     var contact: Contact!
     var orders: [Order] = [] {
         didSet {
@@ -19,8 +22,18 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet var phoneLabel: UILabel!
+    var refreshing: Bool = false {
+        didSet {
+            if refreshing {
+                if !self.refreshControl.refreshing && self.orders.isEmpty {
+                    self.refreshControl.beginRefreshing()
+                    self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.size.height), animated: true)
+                }
+            } else {
+                self.refreshControl.endRefreshing()
+            }
+        }
+    }
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -39,7 +52,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         self.navigationItem.title = self.contact?.name
         self.phoneLabel.text = self.contact?.phone
         
-        self.orders = self.apiCommunicator.orders(contactId: self.contact.id)
+        self.orders = self.contact.orders.map { $0 }
         self.refresh()
     }
     
@@ -66,17 +79,17 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - Actions
     
     func refresh() {
-        if !self.refreshControl.refreshing && self.orders.isEmpty {
-            self.refreshControl.beginRefreshing()
-            self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.size.height), animated: true)
+        if self.refreshing {
+            return
         }
         
+        self.refreshing = true
         self.apiCommunicator.loadOrders(contact: self.contact)
             .then { [weak self] orders in
                 self?.orders = orders
             }
             .always { [weak self] in
-                self?.refreshControl.endRefreshing()
+                self?.refreshing = false
             }
             .error { [weak self] error in
                 self?.showError(error)

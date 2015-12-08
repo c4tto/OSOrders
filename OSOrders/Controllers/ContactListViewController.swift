@@ -17,6 +17,19 @@ class ContactListViewController: UITableViewController, AddContactViewController
             self.tableView.reloadData()
         }
     }
+    
+    var refreshing: Bool = false {
+        didSet {
+            if refreshing {
+                if !self.refreshControl!.refreshing && self.contacts.isEmpty {
+                    self.refreshControl!.beginRefreshing()
+                    self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl!.frame.size.height), animated: true)
+                }
+            } else {
+                self.refreshControl!.endRefreshing()
+            }
+        }
+    }
 
     // MARK: - View Lifecycle
     
@@ -68,17 +81,17 @@ class ContactListViewController: UITableViewController, AddContactViewController
     }
     
     func refresh() {
-        if !self.refreshControl!.refreshing && self.contacts.isEmpty {
-            self.refreshControl!.beginRefreshing()
-            self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl!.frame.size.height), animated: true)
+        if self.refreshing {
+            return
         }
         
+        self.refreshing = true
         self.apiCommunicator.loadContacts()
             .then { [weak self] contacts in
                 self?.contacts = contacts
             }
             .always { [weak self] in
-                self?.refreshControl!.endRefreshing()
+                self?.refreshing = false
             }
             .error { [weak self] error in
                 self?.showError(error)
