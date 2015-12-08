@@ -24,7 +24,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet var phoneLabel: UILabel!
     
     lazy var refreshControl: UIRefreshControl = {
-       let refreshControl = UIRefreshControl()
+        let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
         return refreshControl
     }()
