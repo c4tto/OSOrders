@@ -94,7 +94,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
         }
         
         self.apiCommunicator.loadContacts()
-            .then { [weak self] contacts -> Void in
+            .then { [weak self] contacts in
                 self?.contacts = contacts
             }
             .always { [weak self] in

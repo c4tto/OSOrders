@@ -72,7 +72,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         self.apiCommunicator.loadOrders(contact: self.contact)
-            .then { [weak self] orders -> Void in
+            .then { [weak self] orders in
                 self?.orders = orders
             }
             .always { [weak self] in
