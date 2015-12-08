@@ -18,6 +18,8 @@ class ApiCommunicator: NSObject {
     let orderPath = "_ah/api/orderendpoint/v1/order/"
     
     lazy var requestOperationManager: AFHTTPRequestOperationManager = {
+        AFNetworkActivityIndicatorManager.sharedManager().enabled = true
+        
         let manager = AFHTTPRequestOperationManager(baseURL: self.baseUrl)
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFJSONResponseSerializer()

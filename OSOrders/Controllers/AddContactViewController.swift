@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 protocol AddContactViewControllerDelegate: class {
     func addContactViewController(controller: AddContactViewController,
-        didFillInFormWithName name: String, phone: String)
+        didAddContact contact: Contact)
     func addContactViewControllerDidFinish(controller: AddContactViewController)
 }
 
@@ -20,6 +21,17 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var phoneTextField: UITextField!
+    @IBOutlet var addContactButton: UIButton!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
+    var loading: Bool = false {
+        didSet {
+            self.addContactButton.enabled = !loading
+            self.nameTextField.enabled = !loading
+            self.phoneTextField.enabled = !loading
+            loading ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
+        }
+    }
 
     // MARK: - View Lifecycle
     
@@ -35,19 +47,20 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Text Field Delegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        phoneTextField.becomeFirstResponder()
+        self.phoneTextField.becomeFirstResponder()
         return true
     }
     
     // MARK: - Actions
     
-    @IBAction func addContact() {
-        if let name = self.nameTextField.text, phone = self.phoneTextField.text where !name.isEmpty && !phone.isEmpty {
-            self.delegate?.addContactViewController(self, didFillInFormWithName: name, phone: phone)
-            self.dismiss()
+    @IBAction func submit() {
+        if let name = self.nameTextField.text, phone = self.phoneTextField.text
+            where name.characters.count >= 5 && phone.characters.count >= 5 {
+                
+            self.addContact(name: name, phone: phone)
         } else {
             let error = NSError(domain: "OrdersLocalErrorDomain", code: -1, userInfo: [
-                NSLocalizedDescriptionKey: "All fields must be filled in!"
+                NSLocalizedDescriptionKey: "All fields must be filled in!\n(at least 5 characters)"
             ])
             self.showError(error)
         }
@@ -55,5 +68,21 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func dismiss() {
         self.delegate?.addContactViewControllerDidFinish(self)
+    }
+    
+    func addContact(name name: String, phone: String) {
+        self.loading = true
+        
+        self.apiCommunicator.addContact(name: name, phone: phone)
+            .then { [weak self] contact -> Void in
+                self?.delegate?.addContactViewController(self!, didAddContact: contact)
+                self?.dismiss()
+            }
+            .always { [weak self] in
+                self?.loading = false
+            }
+            .error { [weak self] error in
+                self?.showError(error)
+        }
     }
 }

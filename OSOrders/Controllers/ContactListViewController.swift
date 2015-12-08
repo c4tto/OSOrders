@@ -87,14 +87,8 @@ class ContactListViewController: UITableViewController, AddContactViewController
     
     // MARK: - Add Contact View Controller Delegate
     
-    func addContactViewController(controller: AddContactViewController, didFillInFormWithName name: String, phone: String) {
-        self.apiCommunicator.addContact(name: name, phone: phone)
-            .then { [weak self] contact in
-                self?.contacts += [contact]
-            }
-            .error { [weak self] error in
-                self?.showError(error)
-            }
+    func addContactViewController(controller: AddContactViewController, didAddContact contact: Contact) {
+        self.contacts += [contact]
     }
     
     func addContactViewControllerDidFinish(controller: AddContactViewController) {

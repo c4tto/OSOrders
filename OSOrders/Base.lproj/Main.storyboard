@@ -286,14 +286,20 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" title="Add"/>
                                                     <connections>
-                                                        <action selector="addContact" destination="FcF-Yj-Ifo" eventType="touchUpInside" id="uje-Ga-2Ll"/>
+                                                        <action selector="submit" destination="FcF-Yj-Ifo" eventType="touchUpInside" id="6Lx-GP-1GO"/>
                                                     </connections>
                                                 </button>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hsg-HL-OGo">
+                                                    <rect key="frame" x="260" y="12" width="20" height="20"/>
+                                                    <animations/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="tha-q4-Fr1" secondAttribute="bottom" id="Mxj-S9-r4X"/>
                                                 <constraint firstItem="tha-q4-Fr1" firstAttribute="left" secondItem="Ucn-iz-Ncx" secondAttribute="left" id="PkH-3Z-gb9"/>
+                                                <constraint firstItem="hsg-HL-OGo" firstAttribute="centerY" secondItem="Ucn-iz-Ncx" secondAttribute="centerY" id="THE-O7-12g"/>
+                                                <constraint firstItem="hsg-HL-OGo" firstAttribute="centerX" secondItem="Ucn-iz-Ncx" secondAttribute="centerX" constant="-30" id="Via-rU-uYf"/>
                                                 <constraint firstItem="tha-q4-Fr1" firstAttribute="top" secondItem="Ucn-iz-Ncx" secondAttribute="top" id="eE3-rC-DT3"/>
                                                 <constraint firstAttribute="right" secondItem="tha-q4-Fr1" secondAttribute="right" id="q9m-FK-JJd"/>
                                             </constraints>
@@ -316,6 +322,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="hsg-HL-OGo" id="x56-ge-6Ph"/>
+                        <outlet property="addContactButton" destination="tha-q4-Fr1" id="wlp-UX-IMI"/>
                         <outlet property="nameTextField" destination="Rqp-qc-5Zk" id="mCA-dI-ocY"/>
                         <outlet property="phoneTextField" destination="clW-gS-sJH" id="wYy-Hl-Mlb"/>
                     </connections>
