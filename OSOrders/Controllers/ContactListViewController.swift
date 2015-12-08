@@ -58,26 +58,6 @@ class ContactListViewController: UITableViewController, AddContactViewController
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    // MARK: - Add Contact View Controller Delegate
-    
-    func addContactViewControllerDidFinish(controller: AddContactViewController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func addContactViewController(controller: AddContactViewController,
-        didFillInFormWithName name: String, phone: String) {
-        
-        self.apiCommunicator.addContact(name: name, phone: phone)
-            .then { [weak self] contact -> Void in
-                self?.contacts += [contact]
-                self?.tableView.reloadData()
-            }
-            .error { [weak self] error in
-                self?.showError(error)
-            }
-        
-    }
-
     // MARK: - Actions
     
     @IBAction func showAddContact(sender: AnyObject) {
@@ -103,6 +83,22 @@ class ContactListViewController: UITableViewController, AddContactViewController
             .error { [weak self] error in
                 self?.showError(error)
             }
+    }
+    
+    // MARK: - Add Contact View Controller Delegate
+    
+    func addContactViewController(controller: AddContactViewController, didFillInFormWithName name: String, phone: String) {
+        self.apiCommunicator.addContact(name: name, phone: phone)
+            .then { [weak self] contact in
+                self?.contacts += [contact]
+            }
+            .error { [weak self] error in
+                self?.showError(error)
+        }
+    }
+    
+    func addContactViewControllerDidFinish(controller: AddContactViewController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
