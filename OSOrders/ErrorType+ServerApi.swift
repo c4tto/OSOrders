@@ -19,7 +19,7 @@ extension ErrorType {
             let json = JSON(data: jsonData)
             
             if let code = json["error"]["code"].int, message = json["error"]["message"].string {
-                return NSError(domain: "OrdersHTTPErrorDomain", code: code, userInfo: [
+                return NSError(domain: "OrdersServerErrorDomain", code: code, userInfo: [
                     NSLocalizedDescriptionKey: message
                 ])
             }

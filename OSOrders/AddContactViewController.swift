@@ -47,7 +47,7 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
             self.delegate?.addContactViewController(self, didFillInFormWithName: name, phone: phone)
             self.dismiss()
         } else {
-            let error = NSError(domain: "OSOrdersErrorDomain", code: -1, userInfo: [
+            let error = NSError(domain: "OrdersLocalErrorDomain", code: -1, userInfo: [
                 NSLocalizedDescriptionKey: "All fields must be filled in!"
             ]);
             self.showError(error)
