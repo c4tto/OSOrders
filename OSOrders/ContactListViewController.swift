@@ -13,7 +13,8 @@ class ContactListViewController: UITableViewController, AddContactViewController
     
     var contacts: [Contact] = [] {
         didSet {
-            contacts = contacts.sort { $0.name < $1.name }
+            contacts = contacts.sort { $0.name?.lowercaseString < $1.name?.lowercaseString }
+            self.tableView.reloadData()
         }
     }
 
@@ -25,6 +26,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
         
+        self.contacts = self.apiCommunicator.contacts;
         self.refresh()
     }
     
@@ -86,8 +88,6 @@ class ContactListViewController: UITableViewController, AddContactViewController
     }
     
     func refresh() {
-        self.contacts = self.apiCommunicator.contacts;
-        
         if !self.refreshControl!.refreshing && self.contacts.count == 0 {
             self.refreshControl!.beginRefreshing()
             self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl!.frame.size.height), animated: true)
@@ -96,7 +96,6 @@ class ContactListViewController: UITableViewController, AddContactViewController
         self.apiCommunicator.loadContacts()
             .then { [weak self] contacts -> Void in
                 self?.contacts = contacts
-                self?.tableView.reloadData()
             }
             .always { [weak self] in
                 self?.refreshControl!.endRefreshing()

@@ -13,7 +13,12 @@ import PromiseKit
 class OrderListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var contact: Contact!
-    var orders: [Order] = []
+    var orders: [Order] = [] {
+        didSet {
+            orders = orders.sort { $0.name?.lowercaseString < $1.name?.lowercaseString }
+            self.tableView.reloadData()
+        }
+    }
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var phoneLabel: UILabel!
@@ -34,6 +39,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         self.navigationItem.title = self.contact?.name
         self.phoneLabel.text = self.contact?.phone
         
+        self.orders = self.apiCommunicator.orders(contactId: self.contact.id)
         self.refresh()
     }
     
@@ -60,8 +66,6 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - Actions
     
     func refresh() {
-        self.orders = self.apiCommunicator.orders(contactId: self.contact.id)
-        
         if !self.refreshControl.refreshing && self.orders.count == 0 {
             self.refreshControl.beginRefreshing()
             self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.size.height), animated: true)
@@ -70,7 +74,6 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         self.apiCommunicator.loadOrders(contact: self.contact)
             .then { [weak self] orders -> Void in
                 self?.orders = orders
-                self?.tableView.reloadData()
             }
             .always { [weak self] in
                 self?.refreshControl.endRefreshing()
