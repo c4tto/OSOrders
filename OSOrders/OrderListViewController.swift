@@ -66,7 +66,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: - Actions
     
     func refresh() {
-        if !self.refreshControl.refreshing && self.orders.count == 0 {
+        if !self.refreshControl.refreshing && self.orders.isEmpty {
             self.refreshControl.beginRefreshing()
             self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.size.height), animated: true)
         }

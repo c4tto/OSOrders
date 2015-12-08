@@ -88,7 +88,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
     }
     
     func refresh() {
-        if !self.refreshControl!.refreshing && self.contacts.count == 0 {
+        if !self.refreshControl!.refreshing && self.contacts.isEmpty {
             self.refreshControl!.beginRefreshing()
             self.tableView.setContentOffset(CGPointMake(0, -self.refreshControl!.frame.size.height), animated: true)
         }
