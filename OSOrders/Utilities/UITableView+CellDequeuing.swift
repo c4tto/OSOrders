@@ -11,6 +11,6 @@ import UIKit
 extension UITableView {
     
     func dequeueReuesableCellOfType<T: UITableViewCell>(type: T.Type, forIndexPath indexPath: NSIndexPath) -> T {
-       return self.dequeueReusableCellWithIdentifier(T.className, forIndexPath: indexPath) as! T
+       return self.dequeueReusableCellWithIdentifier(T.typeName, forIndexPath: indexPath) as! T
     }
 }

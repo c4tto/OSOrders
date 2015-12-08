@@ -25,7 +25,7 @@
 		2BFF36F71C16E19E008E8D57 /* ErrorType+ServerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF36F11C16E19E008E8D57 /* ErrorType+ServerApi.swift */; };
 		2BFF36F81C16E19E008E8D57 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF36F41C16E19E008E8D57 /* ContactCell.swift */; };
 		2BFF36F91C16E19E008E8D57 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF36F51C16E19E008E8D57 /* OrderCell.swift */; };
-		2BFF36FB1C172486008E8D57 /* NSObject+Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF36FA1C172486008E8D57 /* NSObject+Reflection.swift */; };
+		2BFF36FB1C172486008E8D57 /* NSObject+TypeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF36FA1C172486008E8D57 /* NSObject+TypeName.swift */; };
 		2BFF36FD1C172E86008E8D57 /* UITableView+CellDequeuing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF36FC1C172E86008E8D57 /* UITableView+CellDequeuing.swift */; };
 		2BFF36FF1C172FB9008E8D57 /* UIStoryboard+ViewControllerInstantiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF36FE1C172FB9008E8D57 /* UIStoryboard+ViewControllerInstantiation.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +51,7 @@
 		2BFF36F11C16E19E008E8D57 /* ErrorType+ServerApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ErrorType+ServerApi.swift"; sourceTree = "<group>"; };
 		2BFF36F41C16E19E008E8D57 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		2BFF36F51C16E19E008E8D57 /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
-		2BFF36FA1C172486008E8D57 /* NSObject+Reflection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Reflection.swift"; sourceTree = "<group>"; };
+		2BFF36FA1C172486008E8D57 /* NSObject+TypeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+TypeName.swift"; sourceTree = "<group>"; };
 		2BFF36FC1C172E86008E8D57 /* UITableView+CellDequeuing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+CellDequeuing.swift"; sourceTree = "<group>"; };
 		2BFF36FE1C172FB9008E8D57 /* UIStoryboard+ViewControllerInstantiation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+ViewControllerInstantiation.swift"; sourceTree = "<group>"; };
 		3E7CEFAC9AAB18C09D885C1E /* Pods-OSOrders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSOrders.release.xcconfig"; path = "Pods/Target Support Files/Pods-OSOrders/Pods-OSOrders.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 			children = (
 				2BFF36F01C16E19E008E8D57 /* AFNetworking+PromiseKit.swift */,
 				2BFF36F11C16E19E008E8D57 /* ErrorType+ServerApi.swift */,
-				2BFF36FA1C172486008E8D57 /* NSObject+Reflection.swift */,
+				2BFF36FA1C172486008E8D57 /* NSObject+TypeName.swift */,
 				2BFF36FC1C172E86008E8D57 /* UITableView+CellDequeuing.swift */,
 				2BFF36FE1C172FB9008E8D57 /* UIStoryboard+ViewControllerInstantiation.swift */,
 			);
@@ -323,7 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BFF36FB1C172486008E8D57 /* NSObject+Reflection.swift in Sources */,
+				2BFF36FB1C172486008E8D57 /* NSObject+TypeName.swift in Sources */,
 				2BFF36EE1C16E17E008E8D57 /* Order.swift in Sources */,
 				2BFF36E21C16E164008E8D57 /* OrderListViewController.swift in Sources */,
 				2BFF36FF1C172FB9008E8D57 /* UIStoryboard+ViewControllerInstantiation.swift in Sources */,
