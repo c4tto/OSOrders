@@ -25,6 +25,7 @@
 		2BFF36F71C16E19E008E8D57 /* ErrorType+ServerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF36F11C16E19E008E8D57 /* ErrorType+ServerApi.swift */; };
 		2BFF36F81C16E19E008E8D57 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF36F41C16E19E008E8D57 /* ContactCell.swift */; };
 		2BFF36F91C16E19E008E8D57 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF36F51C16E19E008E8D57 /* OrderCell.swift */; };
+		2BFF36FB1C172486008E8D57 /* NSObject+Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF36FA1C172486008E8D57 /* NSObject+Reflection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		2BFF36F11C16E19E008E8D57 /* ErrorType+ServerApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ErrorType+ServerApi.swift"; sourceTree = "<group>"; };
 		2BFF36F41C16E19E008E8D57 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		2BFF36F51C16E19E008E8D57 /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		2BFF36FA1C172486008E8D57 /* NSObject+Reflection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Reflection.swift"; sourceTree = "<group>"; };
 		3E7CEFAC9AAB18C09D885C1E /* Pods-OSOrders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSOrders.release.xcconfig"; path = "Pods/Target Support Files/Pods-OSOrders/Pods-OSOrders.release.xcconfig"; sourceTree = "<group>"; };
 		BBEA8D5CEE30D6A3F63080C6 /* Pods_OSOrders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSOrders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8DEC81ADDE408A1AFEB36F8 /* Pods-OSOrders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSOrders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSOrders/Pods-OSOrders.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				2BFF36F01C16E19E008E8D57 /* AFNetworking+PromiseKit.swift */,
 				2BFF36F11C16E19E008E8D57 /* ErrorType+ServerApi.swift */,
+				2BFF36FA1C172486008E8D57 /* NSObject+Reflection.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFF36FB1C172486008E8D57 /* NSObject+Reflection.swift in Sources */,
 				2BFF36EE1C16E17E008E8D57 /* Order.swift in Sources */,
 				2BFF36E21C16E164008E8D57 /* OrderListViewController.swift in Sources */,
 				2BFF36F91C16E19E008E8D57 /* OrderCell.swift in Sources */,
