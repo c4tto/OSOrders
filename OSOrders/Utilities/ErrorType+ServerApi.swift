@@ -1,5 +1,5 @@
 //
-//  NSError+Alamofire.swift
+//  NSError+ServerApi.swift
 //  OSOrders
 //
 //  Created by Ondřej Štoček on 08.12.15.

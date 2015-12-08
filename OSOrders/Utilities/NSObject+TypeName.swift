@@ -1,8 +1,8 @@
 //
-//  NSObject+Reflection.swift
+//  NSObject+TypeName.swift
 //  OSOrders
 //
-//  Created by Ondrej Stocek on 08/12/15.
+//  Created by Ondřej Štoček on 08.12.15.
 //  Copyright © 2015 Ondrej Stocek. All rights reserved.
 //
 
