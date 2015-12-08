@@ -26,7 +26,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
         
-        self.contacts = self.apiCommunicator.contacts;
+        self.contacts = self.apiCommunicator.contacts
         self.refresh()
     }
     
@@ -61,7 +61,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
     // MARK: - Actions
     
     @IBAction func showAddContact(sender: AnyObject) {
-        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("AddContactViewController") as! AddContactViewController;
+        let controller = self.storyboard!.instantiateViewControllerWithIdentifier("AddContactViewController") as! AddContactViewController
         controller.delegate = self
         let navController = UINavigationController(rootViewController: controller)
         self.presentViewController(navController, animated: true, completion: nil)

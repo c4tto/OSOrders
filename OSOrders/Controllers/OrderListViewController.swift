@@ -55,7 +55,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("OrderCell", forIndexPath: indexPath) as! OrderCell
         cell.order = self.orders[indexPath.row]
-        return cell;
+        return cell
     }
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

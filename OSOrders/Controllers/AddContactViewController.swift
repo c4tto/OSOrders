@@ -48,7 +48,7 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
         } else {
             let error = NSError(domain: "OrdersLocalErrorDomain", code: -1, userInfo: [
                 NSLocalizedDescriptionKey: "All fields must be filled in!"
-            ]);
+            ])
             self.showError(error)
         }
     }
