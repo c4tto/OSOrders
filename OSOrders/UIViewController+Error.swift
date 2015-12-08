@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController {
     
     func showError(error: ErrorType) {
-        let message = (error as NSError).localizedDescription
+        let message = ((error.serverApiError ?? error) as NSError).localizedDescription
         
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil))
