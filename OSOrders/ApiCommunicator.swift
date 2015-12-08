@@ -25,18 +25,20 @@ class ApiCommunicator: NSObject {
     }()
     
     var contacts: [Contact] {
+        // TODO: return contact list stored in Realm
         return []
     }
     
     func orders(contactId contactId: String) -> [Order] {
+        // TODO: return orderlist list stored in Realm
         return []
     }
     
     func loadItems<T: Item>(path: String) -> Promise<[T]> {
         return self.requestOperationManager.GET(path, parameters: nil)
             .then { response -> Promise<[T]> in
-                //print(response)
                 let items = JSON(response)["items"].arrayValue.map { T(json: $0) }
+                // TODO: store item list to Realm
                 return Promise(items)
             }
     }
@@ -52,7 +54,6 @@ class ApiCommunicator: NSObject {
     func addContact(name name: String, phone: String) -> Promise<Contact> {
         return self.requestOperationManager.POST(self.contactPath, parameters: ["name": name, "phone": phone])
             .then { response -> Promise<Contact> in
-                //print(response)
                 let contact = Contact(json: JSON(response))
                 return Promise(contact)
             }
