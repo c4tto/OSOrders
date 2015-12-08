@@ -94,7 +94,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
             }
             .error { [weak self] error in
                 self?.showError(error)
-        }
+            }
     }
     
     func addContactViewControllerDidFinish(controller: AddContactViewController) {
