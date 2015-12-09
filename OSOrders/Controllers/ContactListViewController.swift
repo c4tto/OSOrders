@@ -45,13 +45,13 @@ class ContactListViewController: UITableViewController {
             name: UIApplicationDidBecomeActiveNotification,
             object: nil)
 		
-		self.refresh()
+        self.refresh()
     }
-	
-	override func viewWillAppear(animated: Bool) {
-		super.viewWillAppear(animated)
-		self.contacts = self.apiCommunicator.contacts
-	}
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.contacts = self.apiCommunicator.contacts
+    }
     
     func applicationDidBecomeActive(notification: NSNotification) {
         self.refreshing = false

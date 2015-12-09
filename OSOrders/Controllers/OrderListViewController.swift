@@ -10,7 +10,7 @@ import UIKit
 import PromiseKit
 
 class OrderListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet var phoneLabel: UILabel!
     
@@ -56,11 +56,11 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     // MARK: - Table View Data Source
-
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.orders.count
     }

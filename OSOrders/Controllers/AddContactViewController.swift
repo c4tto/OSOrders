@@ -14,7 +14,7 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var phoneTextField: UITextField!
     @IBOutlet var addContactButton: UIButton!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-	
+    
     private var sending: Bool = false {
         didSet {
             self.addContactButton.enabled = !sending
@@ -23,7 +23,7 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
             sending ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
         }
     }
-
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -57,14 +57,14 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
             self.addContact(name: name, phone: phone)
         } else {
             let error = NSError(domain: "OrdersLocalErrorDomain", code: -1, userInfo: [
-                NSLocalizedDescriptionKey: "All fields must be filled in!\n(at least 5 characters)"
-            ])
+                    NSLocalizedDescriptionKey: "All fields must be filled in!\n(at least 5 characters)"
+                ])
             self.showError(error)
         }
     }
     
     @IBAction func dismiss() {
-		self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func addContact(name name: String, phone: String) {
