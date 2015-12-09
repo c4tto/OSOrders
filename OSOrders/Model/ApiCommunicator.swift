@@ -45,7 +45,7 @@ class ApiCommunicator: NSObject {
                 let realm = try! Realm()
                 try! realm.write {
                     realm.delete(realm.objects(Contact))
-					realm.add(contacts, update: true)
+                    realm.add(contacts, update: true)
                 }
                 return Promise(contacts)
             }
