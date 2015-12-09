@@ -76,7 +76,7 @@
                     <navigationItem key="navigationItem" title="Contacts" id="aTe-VN-iOn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6cB-OW-6IL">
                             <connections>
-                                <action selector="showAddContact:" destination="puJ-Kp-yCt" id="LnH-m2-pRO"/>
+                                <action selector="showAddContact" destination="puJ-Kp-yCt" id="1gZ-GF-rZv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

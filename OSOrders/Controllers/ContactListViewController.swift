@@ -88,7 +88,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
     
     // MARK: - Actions
     
-    @IBAction func showAddContact(sender: AnyObject) {
+    @IBAction func showAddContact() {
         let controller = self.storyboard!.instantiateViewControllerOfType(AddContactViewController.self)
         controller.delegate = self
         let navController = UINavigationController(rootViewController: controller)

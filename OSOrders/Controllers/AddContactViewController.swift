@@ -38,9 +38,15 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         self.nameTextField.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.nameTextField.resignFirstResponder()
+        self.phoneTextField.resignFirstResponder()
     }
     
     // MARK: - Text Field Delegate
