@@ -41,6 +41,17 @@ class ContactListViewController: UITableViewController, AddContactViewController
         
         self.contacts = self.apiCommunicator.contacts
         self.refresh()
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "applicationDidBecomeActive:",
+            name: UIApplicationDidBecomeActiveNotification,
+            object: nil)
+    }
+    
+    func applicationDidBecomeActive(notification: NSNotification) {
+        self.refreshing = false
+        self.refresh()
     }
     
     // MARK: - Table View Data Source
