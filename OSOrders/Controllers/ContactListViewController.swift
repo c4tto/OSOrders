@@ -54,6 +54,10 @@ class ContactListViewController: UITableViewController, AddContactViewController
         self.refresh()
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     // MARK: - Table View Data Source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
