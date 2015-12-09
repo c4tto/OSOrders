@@ -44,7 +44,8 @@ class ApiCommunicator: NSObject {
             .then { (contacts: [Contact]) -> Promise<[Contact]> in
                 let realm = try! Realm()
                 try! realm.write {
-                    realm.add(contacts, update: true)
+                    realm.delete(realm.objects(Contact))
+                    realm.add(contacts)
                 }
                 return Promise(contacts)
             }
@@ -52,14 +53,6 @@ class ApiCommunicator: NSObject {
     
     func loadOrders(contact contact: Contact) -> Promise<[Order]> {
         return self.loadItems(self.orderPath + contact.id)
-            .then { (orders: [Order]) -> Promise<[Order]> in
-                let realm = try! Realm()
-                try! realm.write {
-                    orders.forEach { $0.contact = contact }
-                    realm.add(orders, update: true)
-                }
-                return Promise(orders)
-            }
     }
     
     func addContact(name name: String, phone: String) -> Promise<Contact> {

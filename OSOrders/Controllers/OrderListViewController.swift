@@ -52,7 +52,6 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         self.navigationItem.title = self.contact?.name
         self.phoneLabel.text = self.contact?.phone
         
-        self.orders = self.contact.orders.map { $0 }
         self.refresh()
     }
     

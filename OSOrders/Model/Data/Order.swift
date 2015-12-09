@@ -12,7 +12,6 @@ import SwiftyJSON
 class Order: Item {
     
     dynamic var count: Int = 0
-    dynamic var contact: Contact?
     
     convenience required init(json: JSON) {
         self.init()
