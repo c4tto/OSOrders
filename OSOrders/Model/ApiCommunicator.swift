@@ -64,7 +64,7 @@ class ApiCommunicator: NSObject {
                 let contact = Contact(json: JSON(response))
                 let realm = try! Realm()
                 try! realm.write {
-                    realm.add(contact)
+                    realm.add(contact, update: true)
                 }
                 return Promise(contact)
             }
