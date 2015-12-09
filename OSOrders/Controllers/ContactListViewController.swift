@@ -9,7 +9,7 @@
 import UIKit
 import PromiseKit
 
-class ContactListViewController: UITableViewController, AddContactViewControllerDelegate {
+class ContactListViewController: UITableViewController {
     
     var contacts: [Contact] = [] {
         didSet {
@@ -18,7 +18,7 @@ class ContactListViewController: UITableViewController, AddContactViewController
         }
     }
     
-    var refreshing: Bool = false {
+    private var refreshing: Bool = false {
         didSet {
             if refreshing {
                 if !self.refreshControl!.refreshing && self.contacts.isEmpty {
@@ -39,15 +39,19 @@ class ContactListViewController: UITableViewController, AddContactViewController
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
         
-        self.contacts = self.apiCommunicator.contacts
-        self.refresh()
-        
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: "applicationDidBecomeActive:",
             name: UIApplicationDidBecomeActiveNotification,
             object: nil)
+		
+		self.refresh()
     }
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		self.contacts = self.apiCommunicator.contacts
+	}
     
     func applicationDidBecomeActive(notification: NSNotification) {
         self.refreshing = false
@@ -88,13 +92,6 @@ class ContactListViewController: UITableViewController, AddContactViewController
     
     // MARK: - Actions
     
-    @IBAction func showAddContact() {
-        let controller = self.storyboard!.instantiateViewControllerOfType(AddContactViewController.self)
-        controller.delegate = self
-        let navController = UINavigationController(rootViewController: controller)
-        self.presentViewController(navController, animated: true, completion: nil)
-    }
-    
     func refresh() {
         if self.refreshing {
             return
@@ -111,16 +108,6 @@ class ContactListViewController: UITableViewController, AddContactViewController
             .error { [weak self] error in
                 self?.showError(error)
             }
-    }
-    
-    // MARK: - Add Contact View Controller Delegate
-    
-    func addContactViewController(controller: AddContactViewController, didAddContact contact: Contact) {
-        self.contacts += [contact]
-    }
-    
-    func addContactViewControllerDidFinish(controller: AddContactViewController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

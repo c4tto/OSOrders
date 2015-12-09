@@ -22,7 +22,7 @@ class OrderListViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    var refreshing: Bool = false {
+    private var refreshing: Bool = false {
         didSet {
             if refreshing {
                 if !self.refreshControl.refreshing && self.orders.isEmpty {

@@ -8,22 +8,14 @@
 
 import UIKit
 
-protocol AddContactViewControllerDelegate: class {
-    func addContactViewController(controller: AddContactViewController,
-        didAddContact contact: Contact)
-    func addContactViewControllerDidFinish(controller: AddContactViewController)
-}
-
 class AddContactViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var phoneTextField: UITextField!
     @IBOutlet var addContactButton: UIButton!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    
-    weak var delegate: AddContactViewControllerDelegate?
-    
-    var sending: Bool = false {
+	
+    private var sending: Bool = false {
         didSet {
             self.addContactButton.enabled = !sending
             self.nameTextField.enabled = !sending
@@ -72,7 +64,7 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func dismiss() {
-        self.delegate?.addContactViewControllerDidFinish(self)
+		self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func addContact(name name: String, phone: String) {
@@ -83,7 +75,6 @@ class AddContactViewController: UITableViewController, UITextFieldDelegate {
         self.sending = true
         self.apiCommunicator.addContact(name: name, phone: phone)
             .then { [weak self] contact -> Void in
-                self?.delegate?.addContactViewController(self!, didAddContact: contact)
                 self?.dismiss()
             }
             .always { [weak self] in
