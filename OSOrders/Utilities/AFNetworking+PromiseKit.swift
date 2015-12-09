@@ -11,7 +11,7 @@ import PromiseKit
 
 extension AFHTTPRequestOperationManager {
     
-    func GET(urlString: String, parameters: AnyObject?) -> Promise<AnyObject> {
+    func GET(urlString: String, parameters: AnyObject? = nil) -> Promise<AnyObject> {
         return Promise { fullfill, reject in
             self.GET(urlString, parameters: parameters,
                 success: { operation, response in
@@ -23,7 +23,7 @@ extension AFHTTPRequestOperationManager {
         }
     }
     
-    func POST(urlString: String, parameters: AnyObject?) -> Promise<AnyObject> {
+    func POST(urlString: String, parameters: AnyObject? = nil) -> Promise<AnyObject> {
         return Promise { fullfill, reject in
             self.POST(urlString, parameters: parameters,
                 success: { operation, response in

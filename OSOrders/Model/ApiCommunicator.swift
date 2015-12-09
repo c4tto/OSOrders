@@ -32,7 +32,7 @@ class ApiCommunicator: NSObject {
     }
     
     func loadItems<T: Item>(path: String) -> Promise<[T]> {
-        return self.requestOperationManager.GET(path, parameters: nil)
+        return self.requestOperationManager.GET(path)
             .then { response -> Promise<[T]> in
                 let items = JSON(response)["items"].arrayValue.map { T(json: $0) }
                 return Promise(items)
