@@ -24,10 +24,8 @@ class ContactCell: UITableViewCell {
         didSet {
             self.nameLabel.text = contact?.name
             self.phoneLabel.text = contact?.phone
-            self.pictureImageView.image = UIImage(named: "contact-default")
-            if let pictureUrl = contact?.pictureUrl {
-                self.pictureImageView.setImageWithURL(pictureUrl, placeholderImage: pictureImageView.image)
-            }
+            self.pictureImageView.setImageWithURL(contact?.pictureUrl ?? NSURL(),
+                placeholderImage: UIImage(named: "contact-default"))
         }
     }
 }
